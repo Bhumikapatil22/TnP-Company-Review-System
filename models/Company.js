@@ -12,7 +12,13 @@ const companySchema=new mongoose.Schema({
             type:mongoose.Schema.Types.ObjectId,
             ref:'User',
             required:true
-    }
+    },
+    reviews:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Review',
+        required:true
+    }]
+    
 })
 
 module.exports=mongoose.model("Company",companySchema);
