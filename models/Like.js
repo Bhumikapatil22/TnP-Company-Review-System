@@ -7,7 +7,7 @@ const likeSchema=mongoose.Schema({
         required:true
     },
     student:{
-        type:mongoose.Scheema.Types.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:"User",
         required:true
     }
