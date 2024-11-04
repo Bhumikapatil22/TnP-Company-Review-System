@@ -1,7 +1,7 @@
 const mongoose=require("mongoose");
 
 const likeSchema=mongoose.Schema({
-    review:{
+    reviews:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Review",
         required:true
