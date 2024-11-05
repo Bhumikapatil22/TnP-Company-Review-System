@@ -6,10 +6,9 @@ const reviewSchema=mongoose.Schema({
         ref:'Company',
         required:true,
     },
-    alumni:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'User',
-        required:true,
+    email:{
+        type:String,
+        required:true
     },
     reviews:{
         type:String,
