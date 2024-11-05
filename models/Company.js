@@ -8,15 +8,14 @@ const companySchema=new mongoose.Schema({
     },
     location:String,
     industry:String,
-    createdBy:{
-            type:mongoose.Schema.Types.ObjectId,
-            ref:'User',
-            required:true
+    email:{
+        type:String,
+        required:true,
     },
     reviews:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Review',
-        required:true
+       
     }]
     
 })
