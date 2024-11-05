@@ -1,19 +1,19 @@
-const Review = require("../models/Review");
+const ReviewModel = require("../models/Review");
 const Company = require("../models/Company");
 
 exports.createReview = async (req, res) => {
   try {
-    const { company, alumni, reviews } = req.body;
+    const { company, email, reviews } = req.body;
 
-    const review = new Review({
+    const reviewObj = new ReviewModel({
       company,
-      alumni,
+      email,
       reviews,
     });
 
-    const savedReviews = await review.save();
+    const savedReviews = await reviewObj.save();
 
-    const updatedCompany = Company.findByIdAndUpdate(
+    const updatedCompany =await Company.findByIdAndUpdate(
       company,
       { $push: { reviews: savedReviews._id } },
       { new: true }
@@ -29,7 +29,7 @@ exports.createReview = async (req, res) => {
 
 exports.getAllReviews=async(req,res)=>{
   try{
-    const reviews=await Review.find()
+    const reviews=await ReviewModel.find()
     res.json({
       reviews
     })
