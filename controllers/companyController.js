@@ -2,15 +2,16 @@ const Company=require("../models/Company");
 
 exports.createCompany=async(req,res)=>{
     try{
-       const {name,location,industry,createdBy}=req.body;
+       const {name,location,industry,email}=req.body;
 
        const company=new Company({
-        name,location,industry,createdBy
+        name,location,industry,email
        })
 
        const savedCompany= await company.save();
 
-       res.status(201).json({message:"company created successfully"});
+       res.status(201).json({company:savedCompany,
+        message:"company created successfully"});
     }
     catch(error)
     {
