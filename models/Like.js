@@ -1,4 +1,4 @@
-const mongoose=require("mongoose");
+import mongoose from 'mongoose';
 
 const likeSchema=mongoose.Schema({
     reviews:{
@@ -14,4 +14,6 @@ const likeSchema=mongoose.Schema({
 
 })
 
-module.exports=mongoose.model("Like",likeSchema);
+const likeModel=mongoose.model("Like",likeSchema);
+
+export default likeModel;

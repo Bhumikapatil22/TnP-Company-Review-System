@@ -1,7 +1,7 @@
-const Like = require("../models/Like");
-const Review = require("../models/Review");
+import Like from '../models/Like.js';
+import Review from '../models/Review.js';
 
-exports.likeReviews = async (req, res) => {
+export const likeReviews = async (req, res) => {
   try {
     const { reviews, student } = req.body;
 

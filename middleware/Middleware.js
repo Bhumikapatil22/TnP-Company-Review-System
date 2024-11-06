@@ -1,7 +1,6 @@
-const User=require("../models/User");
+import User from '../models/User.js';
 
-
-exports.isAdmin=async(req,res,next)=>{
+export const isAdmin=async(req,res,next)=>{
     try{
     const {email}=req.body;
     const user=await User.findOne({email});
@@ -22,7 +21,7 @@ exports.isAdmin=async(req,res,next)=>{
 };
 
 
-exports.isAlumni=async(req,res,next)=>{
+export const isAlumni=async(req,res,next)=>{
     try{
        const {email}= req.body;
        const user=await User.findOne({email});

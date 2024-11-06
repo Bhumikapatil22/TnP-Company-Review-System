@@ -1,13 +1,21 @@
-const express=require("express");
+import express from 'express';
 const router=express.Router();
 
-const {createAdmin,createAlumni,createStudent,getAllUsers}=require("../controllers/userController");
-const {createCompany,getAllCompanies}=require("../controllers/companyController");
-const {createReview,getAllReviews}=require("../controllers/reviewController");
-const {likeReviews}=require("../controllers/likeController");
+import * as userController from "../controllers/userController.js";
+const {createAdmin,createAlumni,createStudent,getAllUsers}=userController;
+
+import * as companyController from "../controllers/companyController.js";
+const {createCompany,getAllCompanies}=companyController;
+
+import * as reviewController from "../controllers/reviewController.js";
+const {createReview,getAllReviews}=reviewController;
+
+import * as likeController from "../controllers/likeController.js";
+const {likeReviews}=likeController;
 
 //middleware
-const {isAdmin,isAlumni}=require("../middleware/Middleware");
+import * as middleWares from "../middleware/Middleware.js";
+const {isAdmin,isAlumni}=middleWares;
 
 router.post("/admin/create",createAdmin);
 router.post("/alumni/create",createAlumni);
@@ -19,4 +27,4 @@ router.post("/review/create",isAlumni,createReview);
 router.get("/review/get",getAllReviews);
 router.post("/likes/like",likeReviews);
 
-module.exports=router;
+export default router;

@@ -1,4 +1,4 @@
-const mongoose=require("mongoose");
+import mongoose from 'mongoose';
 
 const reviewSchema=mongoose.Schema({
     company:{
@@ -20,4 +20,6 @@ const reviewSchema=mongoose.Schema({
     }]
 })
 
-module.exports=mongoose.model("Review",reviewSchema);
+const reviewModel=mongoose.model("Review",reviewSchema);
+
+export default reviewModel;

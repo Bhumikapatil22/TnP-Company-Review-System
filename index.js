@@ -1,8 +1,9 @@
-const express=require("express");
-const dbConnect=require('./config/database');
-const feedbackRoute=require("./routes/feedbackRoutes");
+import express from 'express';
+import dbConnect from './config/database.js';
+import feedbackRoute from './routes/feedbackRoutes.js';
 
-require("dotenv").config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app=express();
 

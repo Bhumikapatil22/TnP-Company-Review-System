@@ -1,6 +1,6 @@
-const Company=require("../models/Company");
+import Company from '../models/Company.js';
 
-exports.createCompany=async(req,res)=>{
+export const createCompany=async(req,res)=>{
     try{
        const {name,location,industry,email}=req.body;
 
@@ -20,7 +20,7 @@ exports.createCompany=async(req,res)=>{
     }
 }
 
-exports.getAllCompanies=async (req,res)=>{
+export const getAllCompanies=async (req,res)=>{
     try{
        const companies= await Company.find().populate("reviews").exec();
        res.json({

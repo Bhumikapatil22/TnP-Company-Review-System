@@ -1,6 +1,6 @@
-const User = require("../models/User");
+import User from '../models/User.js';
 
-exports.createAdmin = async (req, res) => {
+export const createAdmin = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
@@ -19,7 +19,7 @@ exports.createAdmin = async (req, res) => {
   }
 };
 
-exports.createAlumni = async (req, res) => {
+export const createAlumni = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
@@ -38,7 +38,7 @@ exports.createAlumni = async (req, res) => {
   }
 };
 
-exports.createStudent = async (req, res) => {
+export const createStudent = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
@@ -57,7 +57,7 @@ exports.createStudent = async (req, res) => {
   }
 };
 
-exports.getAllUsers = async (req, res) => {
+export const getAllUsers = async (req, res) => {
   try {
     const users = await User.find(); //task to find one
     res.json({
