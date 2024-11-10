@@ -17,14 +17,15 @@ const {likeReviews}=likeController;
 import * as middleWares from "../middleware/Middleware.js";
 const {isAdmin,isAlumni}=middleWares;
 
+router.get("/user/get",getAllUsers);
+router.get("/review/get",getAllReviews);
+router.get("/company/get",getAllCompanies);
+
 router.post("/admin/create",createAdmin);
 router.post("/alumni/create",createAlumni);
 router.post("/student/create",createStudent);
-router.get("/user/get",getAllUsers);
 router.post("/company/create",isAdmin,createCompany);
-router.get("/company/get",getAllCompanies);
 router.post("/review/create",isAlumni,createReview);
-router.get("/review/get",getAllReviews);
 router.post("/likes/like",likeReviews);
 
 export default router;

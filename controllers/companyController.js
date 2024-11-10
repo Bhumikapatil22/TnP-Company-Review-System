@@ -11,7 +11,7 @@ export const createCompany=async(req,res)=>{
        const savedCompany= await company.save();
 
        res.status(201).json({company:savedCompany,
-        message:"company created successfully"});
+       message:"company created successfully"});
     }
     catch(error)
     {

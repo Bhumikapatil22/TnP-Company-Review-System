@@ -1,6 +1,6 @@
 import express from 'express';
-import dbConnect from './config/database.js';
-import feedbackRoute from './routes/feedbackRoutes.js';
+import dbConnect from '../config/database.js';
+import feedbackRoute from '../routes/feedbackRoutes.js';
 
 import dotenv from 'dotenv';
 dotenv.config();
