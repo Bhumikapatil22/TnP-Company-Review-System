@@ -24,7 +24,7 @@ router.get("/company/get",getAllCompanies);
 router.post("/admin/create",createAdmin);
 router.post("/alumni/create",createAlumni);
 router.post("/student/create",createStudent);
-router.post("/company/create",isAdmin,createCompany);
+router.post("/company/create",createCompany);
 router.post("/review/create",isAlumni,createReview);
 router.post("/likes/like",likeReviews);
 
