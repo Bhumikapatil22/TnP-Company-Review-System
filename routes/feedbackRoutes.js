@@ -5,7 +5,7 @@ import * as userController from "../controllers/userController.js";
 const {createAdmin,createAlumni,createStudent,getAllUsers}=userController;
 
 import * as companyController from "../controllers/companyController.js";
-const {createCompany,getAllCompanies}=companyController;
+const {createCompany,getAllCompanies, updateCompany, deleteCompany}=companyController;
 
 import * as reviewController from "../controllers/reviewController.js";
 const {createReview,getAllReviews}=reviewController;
